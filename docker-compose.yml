@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  database:
+    image: postgres:17.5-alpine
+    container_name: onestudy_database
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - onestudy-network
+
+  onestudy-app:
+    image: luxofons/onestudy:v0.3.1
+    container_name: onestudy_application
+    restart: always
+    ports:
+      - "8888:8080"
+    env_file:
+      - .env
+    networks:
+      - onestudy-network
+
+  pronunciation-service:
+    image: luxofons/ai-pronun:v1.2
+    container_name: pronunciation-service
+    restart: always
+    networks:
+      - onestudy-network
+
+volumes:
+  db_data:
+
+networks:
+  onestudy-network:
+    driver: bridge
