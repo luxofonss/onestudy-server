@@ -5,7 +5,6 @@ import com.edu.onestudy.annotations.LogsActivityAnnotation;
 import com.edu.onestudy.dto.BaseResponse;
 import com.edu.onestudy.entity.Quiz;
 import com.edu.onestudy.security.UserPrincipal;
-import com.edu.onestudy.service.QuizService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

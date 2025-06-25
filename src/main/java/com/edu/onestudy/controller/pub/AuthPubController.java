@@ -6,7 +6,6 @@ import com.edu.onestudy.dto.auth.AuthLoginRequest;
 import com.edu.onestudy.dto.auth.AuthLoginResponse;
 import com.edu.onestudy.dto.auth.AuthRegisterRequest;
 import com.edu.onestudy.dto.auth.AuthRegisterResponse;
-import com.edu.onestudy.service.AuthService;
 import com.edu.onestudy.service.BaseService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;

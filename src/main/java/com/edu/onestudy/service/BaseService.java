@@ -1,6 +1,5 @@
 package com.edu.onestudy.service;
 
-import com.edu.onestudy.constant.RequestKeyConstant;
 import com.edu.onestudy.dto.BaseResponse;
 import com.edu.onestudy.dto.BasicRequestList;
 import com.edu.onestudy.dto.ErrorViolation;
