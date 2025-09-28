@@ -3,6 +3,7 @@ package com.edu.onestudy.service.impl;
 import com.edu.onestudy.constant.ErrorConstant;
 import com.edu.onestudy.constant.QuestionType;
 import com.edu.onestudy.constant.QuizStatus;
+import com.edu.onestudy.constant.UrlConstant;
 import com.edu.onestudy.dto.BaseCreateUpdateResponse;
 import com.edu.onestudy.dto.pronunciation.PronunciationAccuracyRequestDto;
 import com.edu.onestudy.dto.pronunciation.PronunciationAccuracyResponseDto;
@@ -31,6 +32,8 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static com.edu.onestudy.constant.UrlConstant.TransactionLogClientServiceApi.GET_LIST_TRANSACTION;
 
 @Service
 @Slf4j
@@ -92,6 +95,9 @@ public class QuizServiceImpl implements QuizService {
         if (request.getId() == null) {
             throw new IllegalArgumentException("Quiz ID must be provided for update operation.");
         }
+        // TODO: remove
+        log.info("Updating quiz with ID: {}", UrlConstant.TransactionLogClientServiceApi.GET_TRANSACTION);
+        log.info("Updating quiz with ID: {}", GET_LIST_TRANSACTION);
         UUID quizId = UUID.fromString(request.getId());
         Quiz existingQuiz = quizRepository.findById(request.getId())
                 .orElseThrow(() -> new EntityNotFoundException("Quiz with ID " + request.getId() + " not found."));
