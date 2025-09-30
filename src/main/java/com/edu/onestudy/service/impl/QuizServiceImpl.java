@@ -352,6 +352,7 @@ public class QuizServiceImpl implements QuizService {
         quizAnswer.setScoreAchieved(scoreAchieved);
 
         List<QuizAnswer> currentAnswers = quizAnswerRepository.findByQuizAttemptId(attemptId);
+        logger.info(currentAnswers);
 
         for (int i = 0; i < currentAnswers.size(); i++) {
             if (currentAnswers.get(i).getQuestionId().equals(questionId)) {
