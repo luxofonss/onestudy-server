@@ -1,0 +1,2 @@
+ALTER TABLE user_credentials
+    ADD COLUMN deleted_at TIMESTAMP WITH TIME ZONE DEFAULT NULL;

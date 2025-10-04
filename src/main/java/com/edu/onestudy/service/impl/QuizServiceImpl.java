@@ -3,6 +3,7 @@ package com.edu.onestudy.service.impl;
 import com.edu.onestudy.constant.ErrorConstant;
 import com.edu.onestudy.constant.QuestionType;
 import com.edu.onestudy.constant.QuizStatus;
+import com.edu.onestudy.constant.UrlConstant;
 import com.edu.onestudy.dto.BaseCreateUpdateResponse;
 import com.edu.onestudy.dto.pronunciation.PronunciationAccuracyRequestDto;
 import com.edu.onestudy.dto.pronunciation.PronunciationAccuracyResponseDto;
@@ -31,6 +32,8 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static com.edu.onestudy.constant.UrlConstant.TransactionLogClientServiceApi.GET_LIST_TRANSACTION;
 
 @Service
 @Slf4j
@@ -347,6 +350,7 @@ public class QuizServiceImpl implements QuizService {
         quizAnswer.setScoreAchieved(scoreAchieved);
 
         List<QuizAnswer> currentAnswers = quizAnswerRepository.findByQuizAttemptId(attemptId);
+        logger.info(currentAnswers);
 
         for (int i = 0; i < currentAnswers.size(); i++) {
             if (currentAnswers.get(i).getQuestionId().equals(questionId)) {

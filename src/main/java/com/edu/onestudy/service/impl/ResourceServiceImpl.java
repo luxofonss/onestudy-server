@@ -3,6 +3,7 @@ package com.edu.onestudy.service.impl;
 import com.edu.onestudy.constant.Constant;
 import com.edu.onestudy.dto.resource.GetResourceResponse;
 import com.edu.onestudy.entity.Resource;
+import com.edu.onestudy.entity.User;
 import com.edu.onestudy.repository.ResourceRepository;
 import com.edu.onestudy.service.ResourceService;
 import com.edu.onestudy.thirdparty.storage.StorageFactory;
@@ -46,6 +47,7 @@ public class ResourceServiceImpl implements ResourceService {
                 .sizeBytes(file.getSize())
                 .cloudId(storageService.getProviderName())
                 .build();
+        int test = resource.getLastModifiedAt().getDayOfMonth();
         resourceRepository.save(resource);
         return resource;
     }

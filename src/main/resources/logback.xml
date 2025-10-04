@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <conversionRule conversionWord="cl" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender"> <!---->
+        <encoder>
+            <pattern>%cl(%d{HH:mm:ss.SSS}){blue} [%thread] > %highlight(%-5level %logger{35}) - %cl(%m%n){green}</pattern>
+        </encoder>
+    </appender>
+    <logger name="org.springframework" level="ERROR"/>
+    <logger name="org.springframework.web" level="ERROR"/>
+    <logger name="org.apache.tomcat" level="ERROR"/>
+    <logger name="org.eclipse" level="ERROR"/>
+    <logger name="freemarker.cache" level="ERROR"/>
+    <logger name="jndi" level="ERROR"/>
+    <logger name="org.apache.commons.beanutils" level="ERROR"/>
+    <logger name="com.atomikos" level="ERROR" />
+    <logger name="com.atomikos.jdbc.AtomikosConnectionProxy" level="ERROR"/>
+    <root level="INFO">
+        <appender-ref ref="Console"/>
+    </root>
+</configuration>

@@ -1,0 +1,1 @@
+alter table questions add column accept_rate INTEGER  DEFAULT 100;

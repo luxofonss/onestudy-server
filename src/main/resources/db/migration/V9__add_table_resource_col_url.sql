@@ -1,0 +1,2 @@
+ALTER TABLE resources ADD COLUMN url TEXT;
+ALTER TABLE resources ADD COLUMN ownerId UUID;
