@@ -92,6 +92,7 @@ public class QuizServiceImpl implements QuizService {
         if (request.getId() == null) {
             throw new IllegalArgumentException("Quiz ID must be provided for update operation.");
         }
+        Quiz qtest = quizMapper.createQuizDtoToQuiz(request);
         UUID quizId = UUID.fromString(request.getId());
         Quiz existingQuiz = quizRepository.findById(request.getId())
                 .orElseThrow(() -> new EntityNotFoundException("Quiz with ID " + request.getId() + " not found."));
