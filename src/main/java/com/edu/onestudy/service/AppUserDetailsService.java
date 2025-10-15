@@ -23,7 +23,8 @@ public class AppUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.getByUsernameForAuth(username).orElseThrow(() -> new BusinessException(ErrorConstant.UNAUTHORIZED));
+        User user = userRepository.getByUsernameForAuth(username).orElseThrow(() ->
+                                                                              new BusinessException(ErrorConstant.UNAUTHORIZED));
 
         return UserPrincipal.from(user);
     }
